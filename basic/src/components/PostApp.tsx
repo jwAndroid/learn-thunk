@@ -10,7 +10,6 @@ import {
 } from 'react-native';
 
 import { useAppDispatch, useAppSelector } from '../hooks/useRedux';
-import { RootState } from '../redux/config';
 import { fetchPosts } from '../redux/slices/posts';
 
 const styles = StyleSheet.create({
@@ -23,7 +22,7 @@ const styles = StyleSheet.create({
 
 function PostApp() {
   const { data, loading } = useAppSelector(
-    (state: RootState) => state.posts.posts,
+    (state) => state.posts.posts,
   );
 
   const dispatch = useAppDispatch();
